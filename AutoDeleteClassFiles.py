@@ -14,7 +14,6 @@ class MyHandler(FileSystemEventHandler) :
                 print('> deleted')
 folder_to_track = input('folder to track :')
 folder_to_track.replace('\\',"/")
-#folder_to_track = "/Users/Utilisateur/Downloads" for example
 event_handler = MyHandler()
 observer = Observer()
 observer.schedule(event_handler, folder_to_track, recursive=True)
