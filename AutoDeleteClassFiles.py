@@ -7,12 +7,14 @@ class MyHandler(FileSystemEventHandler) :
     def on_modified(self, event) :
         for filename in os.listdir(folder_to_track) :
             list_filename = filename.split('.')
-            print('>>',folder_to_track + '/' + filename)
             if list_filename[-1] == 'class':
+                print('>>',folder_to_track + '/' + filename)
                 file_to_delete = folder_to_track + "/" + filename
-                file_to_delete.remove(src)
+                os.remove(file_to_delete)
                 print('> deleted')
-folder_to_track = "/Users/Utilisateur/Downloads" #for example
+folder_to_track = input('folder to track :')
+folder_to_track.replace('\\',"/")
+#folder_to_track = "/Users/Utilisateur/Downloads" for example
 event_handler = MyHandler()
 observer = Observer()
 observer.schedule(event_handler, folder_to_track, recursive=True)
