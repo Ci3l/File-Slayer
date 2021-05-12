@@ -6,8 +6,6 @@ folder_to_track = r'\Users\Utilisateur\Documents'
 folder_to_track.replace('\\',"/")
 
 files = [f for f in listdir(folder_to_track) if isfile(join(folder_to_track, f))]
-print(files)
-
 directories = [ name for name in os.listdir(folder_to_track) if os.path.isdir(os.path.join(folder_to_track, name)) ]
 if '.tmp.drivedownload' in directories :
     directories.remove('.tmp.drivedownload')
@@ -21,9 +19,6 @@ i = len(directories) - 1
 while i >= 0  :
     directories[i] = folder_to_track + '/' + directories[i]
     i = i - 1
-    print(directories[i])
-print(directories)
-
 for filename in files :
     list_filename = filename.split('.')
     if list_filename[-1] == 'class':
@@ -36,14 +31,11 @@ i = 0
 while len(directories) > 0 :
     files = [f for f in listdir(directories[i]) if isfile(join(directories[i], f))]
     directoriesInDirectories = [ name for name in os.listdir(directories[i]) if os.path.isdir(os.path.join(directories[i], name)) ]
-    print('>>>>',directories[i])
     if len(directoriesInDirectories) > 0 :
         j = 0
         while j < len(directoriesInDirectories)  :
             directoriesToCheck.append(directories[i] + '/' + directoriesInDirectories[j])
-            print('-+-+',directoriesToCheck[j])
             j = j + 1
-    print(files)
     for filename in files :
         list_filename = filename.split('.')
         if list_filename[-1] == 'class':
@@ -52,7 +44,6 @@ while len(directories) > 0 :
             os.remove(file_to_delete)
             print('> deleted')
     del directories[i]
-    print(directories)
     if len(directories) == 0 :
         directories = directoriesToCheck
         directoriesToCheck = []
