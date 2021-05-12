@@ -1,4 +1,5 @@
 import os
+import time
 from os import listdir
 from os.path import isfile, join
 folder_to_track = input('folder to track :')
@@ -6,6 +7,7 @@ folder_to_track.replace('\\',"/")
 
 files = [f for f in listdir(folder_to_track) if isfile(join(folder_to_track, f))]
 directories = [ name for name in os.listdir(folder_to_track) if os.path.isdir(os.path.join(folder_to_track, name)) ]
+#The lines below are here to avoid the program to stop when it meets a folder which it can't access
 if '.tmp.drivedownload' in directories :
     directories.remove('.tmp.drivedownload')
 if 'Mes vidéos' in directories :
@@ -46,3 +48,4 @@ while len(directories) > 0 :
     if len(directories) == 0 :
         directories = directoriesToCheck
         directoriesToCheck = []
+time.sleep(5)
