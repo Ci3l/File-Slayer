@@ -1,13 +1,9 @@
-# AUTO DELETE CLASS FILES
+# CLASS FILES SLAYER
 
 ### Description
-Here's a little python program that deletes automatically the annoying CLASS files when you're coding in JAVA.  
+Here's a little python program that deletes the annoying CLASS files when you're coding in JAVA. It's deleting the files which are in the folder you specify and those in the folders of your folder.  
 
 ### Use project
-If you want to use this work be careful to install the watchdog package
-```
-> pip install watchdog
-```
 After being launched the program will ask you about what folder you want to delete the files from. Now you just got to enter the folder address as specified below
 ```
 folder to track:\Users\Utilisateur\Downloads
