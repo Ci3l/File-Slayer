@@ -1,8 +1,7 @@
 import os
 from os import listdir
 from os.path import isfile, join
-#folder_to_track = input('folder to track :')
-folder_to_track = r'\Users\Utilisateur\Documents'
+folder_to_track = input('folder to track :')
 folder_to_track.replace('\\',"/")
 
 files = [f for f in listdir(folder_to_track) if isfile(join(folder_to_track, f))]
