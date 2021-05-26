@@ -1,4 +1,4 @@
-# CLASS FILES SLAYER
+# FILE SLAYER
 
 ### Description
 Here's a little python program that deletes the annoying CLASS files when you're coding in JAVA, or any other type of file. It's deleting the files which are in the folder you specify and those in the folders of your folder.  
